@@ -4,7 +4,7 @@ const bookSchema = new mongoose.Schema({
   bookname: String,
   year: Number,
   price: String,
-  description:String
+  description: String,
 });
 
 const bookReg = mongoose.model("books", bookSchema);

@@ -1,10 +1,10 @@
 import React, { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useNavigate} from "react-router-dom";
 import axios from "axios";
 
 function AdminLogin() {
   const [value, setValue] = useState({ email: "", password: "" });
-  const navigate = useNavigate();
+  const navigate=useNavigate()
 
   const inputHandle = (e) => {
     setValue({ ...value, [e.target.name]: e.target.value });
@@ -17,8 +17,8 @@ function AdminLogin() {
         .then((da) => {
           console.log(da);
           if (da.data.message === "login Successful") {
+              
             sessionStorage.setItem("token", da.data.token);
-            navigate("/addbook");
           } else {
             alert(da.data.message);
           }
